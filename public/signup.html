@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <style>
+        .container {
+            max-width: 400px;
+            padding: 30px;
+            background-color: grey;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(45deg, #e05966, #0ca3da);
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 400px;
+            padding: 30px;
+            background-color:grey;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: none;
+            outline: none;
+            font-size: 18px;
+            border-bottom: 1px solid #ccc;
+            background-color: #f7f7f7;
+            margin-top: 5px;
+            border-radius: 5px;
+        }
+
+        label {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 18px;
+            color: #666;
+            pointer-events: none;
+            transition: 0.3s ease;
+            background-color: #fff;
+            padding: 0 5px;
+        }
+
+        input:focus ~ label, input:valid ~ label {
+            top: -10px;
+            font-size: 14px;
+            color: #ff6b6b;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: rgb(87, 189, 189);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #ff8c8c;
+        }
+    </style>
+</head>
+<body>
+        <div class="container">
+            <h2>Signup</h2>
+            <form action="/signupSubmit" method="post">
+                <div class="form-group">
+                    <input type="text" id="username" name="username" required>
+                    <label for="username">username</label>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" required>
+                    <label for="email">email</label>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" name="password" required>
+                    <label for="password">password</label>
+                </div>
+                <button type="submit" class="btn">Signup</button>
+            </form>
+        </div>
+</body>
+</html>

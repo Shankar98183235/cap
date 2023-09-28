@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-color: #343a40;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            background-color: #1b6c82;
+            color: #ffffff;
+            padding: 10px 0;
+        }
+
+        .dashboard {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .widget {
+            width: 300px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin: 10px;
+            text-align: center;
+            transition: transform 0.2s;
+            background: linear-gradient(45deg, #2883a4, #b6262b);
+        }
+
+        .widget:hover {
+            transform: scale(1.05);
+        }
+
+        .widget h2 {
+            color: #343a40;
+            font-size: 24px;
+        }
+
+        .widget p {
+            color: #020202;
+            font-size: 16px;
+    
+        }
+
+        .container {
+            max-width: 600px; 
+            margin: auto; 
+            text-align: center; 
+            padding: 20px; 
+        }
+
+        .search-form {
+            margin-bottom: 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .search-form input {
+            width: calc(100% - 20px); 
+            padding: 10px;
+            border: none;
+            outline: none;
+            font-size: 18px;
+            border-bottom: 1px solid #ccc;
+            background-color: #f7f7f7;
+            margin-top: 5px;
+            border-radius: 5px;
+        }
+
+        .search-form button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #3a79d9;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .search-form button:hover {
+            background-color: #33a6cd;
+        }
+
+        .results {
+            text-align: left;
+        } 
+
+        .results p {
+            margin: 0;
+            font-size: 16px;
+            color: #777;
+        }
+        .search-form input {
+            width: 80%;
+        }
+
+        
+
+        .results h2,
+        .results p {
+            margin: 10px 0;
+        }
+        .search_results {
+            text-align: center;
+            left: 560px;
+            margin-top: 20px;
+            height: 50%;
+            position: absolute;
+            bottom: 0;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome to Your Dashboard</h1>
+    </div>
+    <div class="dashboard">
+        <div class="widget">
+            <h2><b>Home</b></h2>
+            <p>Sign out and return later.</p>
+            <a href="home.html" class="btn">Home</a>
+        </div>
+        <div class="widget">
+            <h2><b>About</b></h2>
+            <p>Learn more about our platform.</p>
+            <a href="about.html" class="btn">About</a>
+        </div>
+        <div class="widget">
+            <h2><b>Feedback</b></h2>
+            <p>Don't forget to rate us</p>
+            <a href="feedback.html" class="btn">Feedback</a>
+        </div>
+    </div>       
+     <div class="search_results">
+        <h2><b>E-BOOKS SEARCH</b></h2>
+        <form class="search-form" action="/E-BOOkS" method="post">
+            <input type="text" name="eBOOKS" placeholder="Search for books">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+  
+    <div class="container">
+        <h2 style="color: rgb(225, 39, 39);">search_results</h2>
+        <% if (result) { %>
+            <p style="color: aliceblue;">Kind: <%= result.kind %></p>
+            <p style="color: aliceblue;">Title: <%= result.title %></p>
+            <p style="color: aliceblue;">Published Date: <%= result.publishedDate %></p>
+            <p style="color: aliceblue;">Description: <%= result.description %></p>
+        <% } else { %>
+            <p></p>
+        <% } %>
+    </div>
+    
+        
+       
+    
+</body>
+</html>
+        
